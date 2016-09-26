@@ -1,0 +1,30 @@
+<div class="flex-container">
+    <div class="landing-page-container">
+
+        <div class="logo-container">
+            <img src="../../assets/img/ATBizza-Logo.png">
+            <button (click)="onFacebookLogoutClick()" *ngIf="showLogoutFbNav" id="fb-logout-btn">FB Logout</button>
+        </div>
+
+        <div class="launch-screen-welcome">
+            <h1>{{pageHeader}}</h1>
+            <h3>{{pageSubTitle}}</h3>
+            <button class="btn btn-lg btn-social btn-facebook" style="font-size: 1.5em;"
+                    (click)="onFacebookLoginClick()" *ngIf="showLoginFbNav">
+                <i class="fa fa-facebook fa-fw"></i>Login with Facebook
+            </button>
+
+            <a [routerLink]="['home']" class="btn btn-primary" *ngIf="showHomeNav">Home</a>
+            <a [routerLink]="['orderhistory']" class="btn btn-primary" *ngIf="showHistoryNav">Order History</a>
+        </div>
+
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+
+
+
+

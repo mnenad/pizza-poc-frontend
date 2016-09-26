@@ -1,0 +1,33 @@
+
+<H1>CHECKOUT</H1>
+
+<div>
+    premadeName : {{orderDetail.premadeName}}
+
+    crustStyle : {{orderDetail.crustStyle}}
+
+    size : {{orderDetail.size}}
+
+    baseSauce : {{orderDetail.baseSauce}}
+
+    cheese : {{orderDetail.cheese}}
+
+    orderDate : {{orderDetail.orderDate}}
+
+    <ul>
+        <li>
+            meats :
+            <span *ngFor="let meat of orderDetail.meats;">{{meat}} &nbsp;&nbsp;</span>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            topping :
+            <span *ngFor="let topping of orderDetail.otherToppings;">{{topping}} &nbsp;&nbsp;</span>
+        </li>
+    </ul>
+
+
+    <button (click)="checkout()">Checkout Now</button>
+</div>

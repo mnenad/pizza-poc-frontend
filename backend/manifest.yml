@@ -1,0 +1,11 @@
+---
+applications:
+- name: atbpizzabackend
+  memory: 1G
+  host: atbpizzabackend
+  domain: cfapps.io
+  path: build/libs/spring-boot-angular2-1.0.2.jar
+  services:
+  - datasource
+  env:
+    JAVA_OPTS : -Dspring.profiles.active=cloud

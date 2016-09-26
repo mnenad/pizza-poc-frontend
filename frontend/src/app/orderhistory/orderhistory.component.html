@@ -1,0 +1,48 @@
+<ul class="list">
+    <li class="list-item" *ngFor="let order of orders" (click)="startOrder(order.orderDetail)">
+        <div class="list-content" id="pre-set">
+            <div class="list-text">
+                <h2 class="pizza-name">{{order.orderDetail.premadeName}}</h2>
+                <div class="divider"></div>
+                <h3 class="pizza-description">Pineapple, Mozarella, Tomato Sauce</h3>
+            </div>
+        </div>
+        <img class="delete-icon" src="../../assets/img/delete-icon.png" alt="delete order" (click)="deleteOrder(order, $event)">
+    </li>
+</ul>
+
+
+
+
+<!--
+<ul *ngFor="let order of orderDetails;">
+    <li>
+        premadeName : {{order.premadeName}}
+    </li>
+    <li>
+        crustStyle : {{order.crustStyle}}
+    </li>
+    <li>
+        size : {{order.size}}
+    </li>
+    <li>
+        baseSauce : {{order.baseSauce}}
+    </li>
+    <li>
+        cheese : {{order.cheese}}
+    </li>
+    <li>
+        orderDate : {{order.orderDate}}
+    </li>
+
+    <li>
+        meats :
+        <span *ngFor="let meat of order.meats;">{{meat}} &nbsp;&nbsp;</span>
+    </li>
+
+    <li>
+        topping :
+        <span *ngFor="let topping of order.otherToppings;">{{topping}} &nbsp;&nbsp;</span>
+    </li>
+</ul>
+-->

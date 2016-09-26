@@ -1,0 +1,6 @@
+applications:
+- name: atbpizzafrontend
+  memory: 1G
+  host: atbpizzafrontend
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+  path: dist

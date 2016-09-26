@@ -1,0 +1,69 @@
+$phone-min-width: 300px;
+$phone-max-width: 667px;
+$tablet-min-width: 640px;
+$tablet-max-width: 900px;
+
+
+@mixin phone {
+  @media (min-width: #{$phone-min-width}) and (max-width: #{$phone-max-width}) {
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width}) {
+    @content;
+  }
+}
+
+.order-container {
+  //padding: 15px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  background: white;
+
+  > * {
+    width: 50%;
+  }
+
+  .promo-image {
+    //TODO: Need vertical image
+    background: url("../../assets/img/Pizza-Photo-1.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .order-form {
+    padding: 20px;
+  }
+
+  @include phone {
+    .promo-image {
+      display: none;
+    }
+  }
+
+  .form-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+  }
+
+  select.form-control {
+    height: 3.3em;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+  }
+
+  .topping-list {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,86 @@
+<div class="order-container">
+    <div class="promo-image"></div>
+
+    <div class="order-form">
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name"
+                   required
+                   [(ngModel)]="model.premadeName" name="name">
+        </div>
+        <div class="form-group">
+            <label for="size" class="form-label">Size</label>
+            <select class="form-control" id="size"
+                    required
+                    [(ngModel)]="model.size" name="size">
+                <option *ngFor="let s of toppings.sizes" [value]="s">{{s}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="crustStyle" class="form-label">Crust Style</label>
+            <select class="form-control" id="crustStyle"
+                    required
+                    [(ngModel)]="model.crustStyle" name="crustStyle">
+                <option *ngFor="let c of toppings.crusts" [value]="c">{{c}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="baseSauce" class="form-label">Sauce</label>
+            <select class="form-control" id="baseSauce"
+                    required
+                    [(ngModel)]="model.baseSauce" name="baseSauce">
+                <option *ngFor="let bs of toppings.sauces" [value]="bs">{{bs}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cheese" class="form-label">Cheese</label>
+            <select class="form-control" id="cheese"
+                    required
+                    [(ngModel)]="model.cheese" name="cheese">
+                <option *ngFor="let c of toppings.cheeses" [value]="c">{{c}}</option>
+            </select>
+        </div>
+
+        <!-- MULTIPLE CHECKBOXES -->
+        <label for="meat-toppings" class="form-label">Meat</label>
+        <ul class="topping-list" id="meat-toppings">
+            <li *ngFor="let meat of toppings.meats">
+                <label>
+                <input type="checkbox" [attr.name]="toppings.meats" (change)="updateCheckedMeats(meat, $event)"
+                       [checked]="model.meats.indexOf(meat) >= 0">
+                {{meat}}
+                </label>
+            </li>
+        </ul>
+
+        <label for="other-toppings" class="form-label">Other Toppings</label>
+        <ul class="topping-list" id="other-toppings">
+            <li *ngFor="let otherTopping of toppings.otherToppings">
+                <label>
+                    <input type="checkbox" [attr.name]="toppings.otherToppings"
+                           [checked]="model.otherToppings.indexOf(otherTopping) >= 0"
+                           (change)="updateCheckedOtherTopping(otherTopping, $event)">
+                    {{otherTopping}}
+                </label>
+            </li>
+        </ul>
+        <!--<h3>checked</h3>-->
+        <!--<ul>-->
+        <!--<li *ngFor="let value of model.otherToppings">-->
+        <!--{{value}}-->
+        <!--</li>-->
+        <!--</ul>-->
+
+
+        <!--<h3>checked</h3>-->
+        <!--<ul>-->
+        <!--<li *ngFor="let value of model.meats">-->
+        <!--{{value}}-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <button (click)="navigateToCheckout()" class="btn btn-primary">Add to Cart</button>
+    </div>
+</div>
+
+

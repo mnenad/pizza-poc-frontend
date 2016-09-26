@@ -1,0 +1,24 @@
+<ul class="list">
+    <li class="list-item">
+        <div class="list-content" (click)="startOrder()">
+            <div class="list-text">
+                <h2 class="pizza-name">Create Your Own</h2>
+                <div class="divider"></div>
+                <h3 class="pizza-description"> Choose from the freshest ingredients
+                </h3>
+            </div>
+        </div>
+    </li>
+    <li class="list-item" *ngFor="let order of orderDetails">
+        <div class="list-content" id="pre-set" (click)="startOrder(order)">
+            <div class="list-text">
+                <h2 class="pizza-name">{{order.premadeName}}</h2>
+                <div class="divider"></div>
+                <h3 class="pizza-description">Pineapple, Mozarella, Tomato Sauce</h3>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+
